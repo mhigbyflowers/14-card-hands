@@ -10,11 +10,11 @@ export default class App {
     fetch(`https://card-proxy.herokuapp.com/decks/new`)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         for (var i = 0; i < 5; i++) {
          const hand = new Hand(data.deck_id,this.el);
-
           hand.getData().then(() => {
-            hand.render();
+          hand.render();
           });
         }
 
